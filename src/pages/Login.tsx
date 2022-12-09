@@ -22,7 +22,7 @@ const Login = (props: Props) => {
       const data = await response.json()
       if(data.user){
         localStorage.setItem('token', data.user)
-        window.location.href = '/dashboard'
+        window.location.assign('/dashboard')
       } else{
         alert('Please check your username and/or password')
       }
