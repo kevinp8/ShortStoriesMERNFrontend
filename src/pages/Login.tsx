@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Navbar from '../components/Navbar';
+import { redirect } from 'react-router-dom';
 
 type Props = {};
 
@@ -22,7 +23,7 @@ const Login = (props: Props) => {
       const data = await response.json()
       if(data.user){
         localStorage.setItem('token', data.user)
-        window.location.assign('/dashboard')
+        redirect('/dashboard')
       } else{
         alert('Please check your username and/or password')
       }
